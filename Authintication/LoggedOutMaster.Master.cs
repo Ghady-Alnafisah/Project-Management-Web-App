@@ -5,15 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TaskTrackerAUTH
+namespace TasksTrackerWebApp.Authintication
 {
-    public partial class users : System.Web.UI.Page
+    public partial class LoggedOutMaster : System.Web.UI.MasterPage
     {
-        taskProjectEntities db = new taskProjectEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            usersGrid.DataSource = db.users.ToList();
-            usersGrid.DataBind();
+
         }
     }
 }

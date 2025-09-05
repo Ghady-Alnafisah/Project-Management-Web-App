@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net35\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -75,6 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AdminDashboard\AdminHome.aspx" />
+    <Content Include="AdminDashboard\systemDashboard.aspx" />
+    <Content Include="AdminDashboard\usersData.aspx" />
+    <Content Include="Authintication\SigninPage.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -91,14 +99,38 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="CreateTask.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="Authintication\rigestrationPage.aspx" />
+    <Content Include="excelExport.aspx" />
+    <Content Include="Images\AdminPanelIcon.png" />
+    <Content Include="Images\collabIMG.png" />
+    <Content Include="Images\heroPageIMG.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\signupIMG.png" />
+    <Content Include="Images\SignUpLogo.jpg" />
+    <Content Include="Images\userHomeTasksLogo.jpg" />
+    <Content Include="mainMaster.Master" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="signUp.aspx" />
-    <Content Include="users.aspx" />
+    <Content Include="Authintication\LoggedOutMaster.Master" />
+    <None Include="Properties\PublishProfiles\CollabSpaceWebApp - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TasksTrackerWebApp14470301065547 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TaskTrackerAUTH14470301024408 - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\taskSelection.js" />
+    <Content Include="userHome.aspx" />
     <Content Include="usersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>usersModel.Context.cs</LastGenOutput>
@@ -110,12 +142,91 @@
       <LastGenOutput>usersModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
+    <Content Include="TasksPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\AdminDashboardMaster.Master.cs">
+      <DependentUpon>AdminDashboardMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\AdminDashboardMaster.Master.designer.cs">
+      <DependentUpon>AdminDashboardMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\systemDashboard.aspx.cs">
+      <DependentUpon>systemDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\systemDashboard.aspx.designer.cs">
+      <DependentUpon>systemDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard\usersData.aspx.cs">
+      <DependentUpon>usersData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard\usersData.aspx.designer.cs">
+      <DependentUpon>usersData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\CRUD.cs" />
+    <Compile Include="App_Code\mailMgr.cs" />
+    <Compile Include="Authintication\LoggedOutMaster.Master.cs">
+      <DependentUpon>LoggedOutMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authintication\LoggedOutMaster.Master.designer.cs">
+      <DependentUpon>LoggedOutMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Authintication\SigninPage.aspx.cs">
+      <DependentUpon>SigninPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authintication\SigninPage.aspx.designer.cs">
+      <DependentUpon>SigninPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="category.cs">
       <DependentUpon>usersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTask.aspx.cs">
+      <DependentUpon>CreateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTask.aspx.designer.cs">
+      <DependentUpon>CreateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="excelExport.aspx.cs">
+      <DependentUpon>excelExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="excelExport.aspx.designer.cs">
+      <DependentUpon>excelExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs" />
+    <Compile Include="LoggedUsers.Master.cs">
+      <DependentUpon>LoggedUsers.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedUsers.Master.designer.cs">
+      <DependentUpon>LoggedUsers.Master</DependentUpon>
     </Compile>
     <Compile Include="mainMaster.Master.cs">
       <DependentUpon>mainMaster.Master</DependentUpon>
@@ -128,6 +239,13 @@
     <Compile Include="reminder.cs">
       <DependentUpon>usersModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Authintication\rigestrationPage.aspx.cs">
+      <DependentUpon>rigestrationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authintication\rigestrationPage.aspx.designer.cs">
+      <DependentUpon>rigestrationPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="task.cs">
       <DependentUpon>usersModel.tt</DependentUpon>
     </Compile>
@@ -137,12 +255,12 @@
     <Compile Include="user.cs">
       <DependentUpon>usersModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="users.aspx.cs">
-      <DependentUpon>users.aspx</DependentUpon>
+    <Compile Include="userHome.aspx.cs">
+      <DependentUpon>userHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="users.aspx.designer.cs">
-      <DependentUpon>users.aspx</DependentUpon>
+    <Compile Include="userHome.aspx.designer.cs">
+      <DependentUpon>userHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="usersModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -162,23 +280,15 @@
     <Compile Include="usersRole.cs">
       <DependentUpon>usersModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="TasksPage.aspx.cs">
+      <DependentUpon>TasksPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="TasksPage.aspx.designer.cs">
+      <DependentUpon>TasksPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mainMaster.Master" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -195,6 +305,9 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="AdminDashboard\AdminDashboardMaster.Master" />
+    <Content Include="Images\.vs\slnx.sqlite" />
+    <Content Include="LoggedUsers.Master" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -209,6 +322,8 @@
     <Content Include="usersModel.edmx.diagram">
       <DependentUpon>usersModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\.vs\Images\v17\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TaskTrackerAUTH
+namespace TasksTrackerWebApp
 {
     using System;
     using System.Collections.Generic;

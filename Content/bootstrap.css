@@ -441,7 +441,8 @@ th {
 }
 
 label {
-  display: inline-block;
+    display: inline-block;
+    font-weight:bold
 }
 
 button {

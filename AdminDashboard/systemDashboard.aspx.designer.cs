@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace TaskTrackerAUTH
+namespace TasksTrackerWebApp.AdminDashboard
 {
-    public partial class WebForm2
+    public partial class systemDashboard
     {
     }
 }

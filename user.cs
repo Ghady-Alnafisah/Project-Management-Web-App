@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TaskTrackerAUTH
+namespace TasksTrackerWebApp
 {
     using System;
     using System.Collections.Generic;
@@ -20,15 +20,17 @@ namespace TaskTrackerAUTH
             this.tasks = new HashSet<task>();
             this.taskLogs = new HashSet<taskLog>();
         }
-    
-        public System.Guid userId { get; set; }
-        public string email { get; set; }
-        public string passwordHash { get; set; }
-        public string role { get; set; }
         public Nullable<System.DateTime> createdAt { get; set; }
-        public string firstName { get; set; }
+        public string role { get; set; }
+        public string passwordHash { get; set; }
+        public string email { get; set; }
         public string lastName { get; set; }
-    
+        public string firstName { get; set; }
+        public System.Guid userId { get; set; }
+
+
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<task> tasks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

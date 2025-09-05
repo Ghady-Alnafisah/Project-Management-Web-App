@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TaskTrackerAUTH
+namespace TasksTrackerWebApp
 {
 
 
-    public partial class users
+    public partial class usersData
     {
 
         /// <summary>
